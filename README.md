@@ -19,23 +19,19 @@ npm i midjourney-client
 The API is super simple; just enter your prompt and `await` for the generated image URL.
 
 ```js
-import midjourney from 'midjourney-client'
-
-const images = await midjourney('a painting of a ginger cat.')
+await midjourney('a painting of a ginger cat.')
 ```
 
-You can also pass in any parameter supported by the inference API in the second argument. For example, to change the number of output images just specify the `num_outputs` parameter.
-
+Pass in additional parameters.
 
 ```js
-const images = await midjourney('a painting of a ginger cat.', { num_outputs: 4 })
+await midjourney('a painting of a ginger cat.', { width: 1024 })
 ```
 
 A complete list of supported parameters can be found [here](https://replicate.com/prompthero/openjourney/api).
 
 
 ## Examples
-
 
 > portrait of female elf, intricate, elegant, highly detailed, digital painting, artstation, concept art, smooth, sharp focus, illustration, art by artgerm and greg rutkowski and alphonse mucha, 8k.
 
