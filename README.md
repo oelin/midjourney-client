@@ -16,7 +16,7 @@ npm i midjourney-client
 
 ## API
 
-The API is super simple; just enter your prompt and `await` for the generated image URLs.
+The API is super simple; just enter your prompt and `await` for the generated image URLs. One image is returned by default.
 
 ```js
 await midjourney('a painting of a ginger cat.')
