@@ -11,7 +11,7 @@ A minimal client for the hosted inference API at [https://replicate.com/prompthe
 
 > whimsical fantasy elegant rose floral botany maximalism with a wave of flowers garden flowing flowers floating in misty soft pink, aqua, soft apricot, smoke fractal, moody and big scale realistic flowers, octane render, by josephine wall art, isabelle menin, Jean, amy brown.
 
-<img src='./images/floers.png'>
+<img src='./images/flowers.png'>
 
 
 ## API
