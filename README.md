@@ -1,6 +1,6 @@
 # Midjourney Client
 
-A minimal client for the hosted inference API at [https://replicate.com/prompthero/openjourney](https://replicate.com/prompthero/openjourney). 
+A minimal client for Openjourney's hosted inference API on replicate. This package allows you to easily integrate Midjourney/Openjourney into your code.
 
 > Openjourney is an open source Stable Diffusion fine tuned model on Midjourney images, by [PromptHero](https://prompthero.com/). Predictions run on Nvidia A100 GPU hardware.
 
