@@ -50,7 +50,7 @@ export default async function midjourney(prompt, inputs={}) {
         const uuid = (await response.json()).uuid
 
 
-        for (let _ = 0; _ < constans.TIMEOUT; _ ++) {
+        for (let _ = 0; _ < constants.TIMEOUT; _ ++) {
                 let response1 = await fetch(cookieJar, `https://replicate.com/api/models/${constants.MODEL_NAME}/versions/${constants.MODEL_VERSION}/predictions/${uuid}`, {
                         headers: {
                                 'accept': '*/*',
