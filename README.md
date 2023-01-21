@@ -12,7 +12,9 @@ npm i midjourney-client
 ```
 
 
-## Usage
+## API
+
+The API is super simple; just enter your prompt and `await` for the generated image URL.
 
 ```js
 const midjourney = require('midjourney-client')
