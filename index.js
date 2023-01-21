@@ -2,29 +2,26 @@ import {fetch, CookieJar} from 'node-fetch-cookies'
 import * as constants from './constants.js'
 
 
-function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+function sleep(milliseconds) {
+        return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
 
-export default async function midjourney(prompt, inputs={}) {
+export default async function midjourney(prompt, inputs = {}) {
 
-
-        const cookieJar = new CookieJar()
-
+        const sessionCookieJar = new CookieJar()
 
         // Grab a CSRF token...
 
-        await fetch(cookieJar, `https://replicate.com/${constants.MODEL_NAME}`)
-
+        await fetch(sessionCookieJar, `https://replicate.com/${constants.MODEL_NAME}`)
 
         // Call the model API...
 
-        const response0 = await fetch(cookieJar, `https://replicate.com/api/models/${constants.MODEL_NAME}/versions/${constants.MODEL_VERSION}/predictions`, {
+        const uuid = await fetch(sessionCookieJar, `https://replicate.com/api/models/${constants.MODEL_NAME}/versions/${constants.MODEL_VERSION}/predictions`, {
                 headers: {
                         'content-type': 'application/json',
                         'accept': 'application/json',
-                        'x-csrftoken': cookieJar.cookies.get('csrftoken'),
+                        'x-csrftoken': sessionCookieJar.cookies.get('csrftoken'),
                 },
                 method: 'POST',
                 mode: 'cors',
@@ -43,16 +40,13 @@ export default async function midjourney(prompt, inputs={}) {
                 }),
         })
 
-
         // Wait for the image to be generated...
 
         const uuid = (await response0.json()).uuid
 
-
-        for (let _ = 0; _ < constants.TIMEOUT; _ ++) {
-                await sleep(1000)
+        for (let timeoutCounter = 0; timeoutCounter < constants.TIMEOUT; timeoutCounter ++) {
                 
-                let response1 = await fetch(cookieJar, `https://replicate.com/api/models/${constants.MODEL_NAME}/versions/${constants.MODEL_VERSION}/predictions/${uuid}`, {
+                let response1 = await fetch(sessionCookieJar, `https://replicate.com/api/models/${constants.MODEL_NAME}/versions/${constants.MODEL_VERSION}/predictions/${uuid}`, {
                         headers: {
                                 'accept': '*/*',
                         },
@@ -63,7 +57,9 @@ export default async function midjourney(prompt, inputs={}) {
                 })
 
                 let output = (await response1.json())?.prediction?.output
-                if (output.length) return output;
+                if (output.length) { return output }
+                
+                await sleep(1000)
         }
 
         return []
