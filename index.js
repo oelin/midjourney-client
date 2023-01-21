@@ -20,8 +20,7 @@ export default async function midjourney(prompt, inputs={}) {
 
         // Call the model API...
 
-        const response = await fetch(cookieJar, `https://replicate.com/api/models/${constants.MODEL_NAME}/versions/${constants.MODEL_VERSION}/predictions`, {
-
+        const response0 = await fetch(cookieJar, `https://replicate.com/api/models/${constants.MODEL_NAME}/versions/${constants.MODEL_VERSION}/predictions`, {
                 headers: {
                         'content-type': 'application/json',
                         'accept': 'application/json',
@@ -47,10 +46,12 @@ export default async function midjourney(prompt, inputs={}) {
 
         // Wait for the image to be generated...
 
-        const uuid = (await response.json()).uuid
+        const uuid = (await response0.json()).uuid
 
 
         for (let _ = 0; _ < constants.TIMEOUT; _ ++) {
+                await sleep(1000)
+                
                 let response1 = await fetch(cookieJar, `https://replicate.com/api/models/${constants.MODEL_NAME}/versions/${constants.MODEL_VERSION}/predictions/${uuid}`, {
                         headers: {
                                 'accept': '*/*',
@@ -61,16 +62,9 @@ export default async function midjourney(prompt, inputs={}) {
                         body: null,
                 })
 
-                let json = await response1.json()
-                let output = json?.prediction?.output
-
-                if (output && output.length) {
-                        return output
-                }
-
-                await sleep(1000)
+                let output = (await response1.json())?.prediction?.output
+                if (output.length) return output;
         }
-
 
         return []
 }
