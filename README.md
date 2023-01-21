@@ -1,6 +1,8 @@
 # Midjourney Client
 
-A minimal client for the hosted inference API at [https://replicate.com/prompthero/openjourney](https://replicate.com/prompthero/openjourney). Openjourney is an open source Stable Diffusion fine tuned model on Midjourney images, by [PromptHero](https://prompthero.com/). Predictions run on Nvidia A100 GPU hardware.
+A minimal client for the hosted inference API at [https://replicate.com/prompthero/openjourney](https://replicate.com/prompthero/openjourney). 
+
+> Openjourney is an open source Stable Diffusion fine tuned model on Midjourney images, by [PromptHero](https://prompthero.com/). Predictions run on Nvidia A100 GPU hardware.
 
 ## Examples
 
@@ -14,7 +16,16 @@ A minimal client for the hosted inference API at [https://replicate.com/prompthe
 <img src='./images/flowers.png'>
 
 
-## API
+## Installation
+
+Install with NPM.
+
+```sh
+$ npm i midjourney-client
+```
+
+
+## Usage
 
 The API is super simple; just pass in your prompt and wait for the API to return the generated image URL.
 
