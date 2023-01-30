@@ -57,7 +57,7 @@ export default async function midjourney(prompt, inputs = {}) {
                 })
 
                 let output = (await response2.json())?.prediction?.output
-                if (output.length) { return output }
+                if (output && output.length) { return output }
                 
                 await sleep(1000)
         }
