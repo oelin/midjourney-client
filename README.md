@@ -1,6 +1,6 @@
 # Midjourney Client
 
-A minimal client for Openjourney's hosted inference API on replicate. This package allows you to easily integrate Midjourney/Openjourney into your code.
+A minimal client for Openjourney's hosted inference API on replicate. This package allows you to easily access Midjourney/Openjourney from NodeJS.
 
 > Openjourney is an open source Stable Diffusion fine tuned model on Midjourney images, by [PromptHero](https://prompthero.com/). Predictions run on Nvidia A100 GPU hardware.
 
@@ -16,19 +16,19 @@ npm i midjourney-client
 
 ## API
 
-The API is super simple; just enter your prompt and `await` for the generated image URLs. One image is returned by default.
+The API is super simple; just enter your prompt and `await` for one or more image URLs. One image is returned by default.
 
 ```js
 await midjourney('a painting of a ginger cat.')
 ```
 
-Pass in additional parameters.
+Pass in additional parameters as a second argument.
 
 ```js
 await midjourney('a painting of a ginger cat.', { width: 1024 })
 ```
 
-A complete list of supported parameters can be found [here](https://replicate.com/prompthero/openjourney/api).
+A complete list of supported parameters can be found [here](https://replicate.com/prompthero/openjourney/api#inputs).
 
 
 ## Examples
@@ -45,3 +45,4 @@ A complete list of supported parameters can be found [here](https://replicate.co
 ## Future
 
 - Improve API interfaces (i.e. return richer objects than just arrays of URLs).
+- Merge/become part of Replicated/ReplicateJS. 
