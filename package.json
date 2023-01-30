@@ -1,15 +1,31 @@
 {
   "name": "midjourney-client",
-  "version": "1.0.0",
-  "description": "A minimal client for the hosted inference API at https://replicate.com/prompthero/openjourney.",
+  "version": "1.0.2",
+  "description": "A minimal client for Midjourney's hosted inference API on Replicate.",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "oelin",
   "license": "ISC",
   "dependencies": {
     "node-fetch-cookies": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oelin/midjourney-client.git"
+  },
+  "keywords": [
+    "midjourney",
+    "stable-diffusion",
+    "openjourney",
+    "api",
+    "client",
+    "replicate"
+  ],
+  "bugs": {
+    "url": "https://github.com/oelin/midjourney-client/issues"
+  },
+  "homepage": "https://github.com/oelin/midjourney-client#readme"
 }

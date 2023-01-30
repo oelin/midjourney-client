@@ -1,10 +1,10 @@
 # Midjourney Client
 
-A minimal client for Openjourney's hosted inference API on replicate. This package allows you to easily access Midjourney/Openjourney from NodeJS.
+A minimal client for Midjourney's hosted inference API on replicate. This package allows you to easily access Midjourney/Openjourney from NodeJS.
 
 > Openjourney is an open source Stable Diffusion fine tuned model on Midjourney images, by [PromptHero](https://prompthero.com/). Predictions run on Nvidia A100 GPU hardware.
 
-<img src='./images/elf.png'>
+<img src='https://github.com/oelin/midjourney-client/blob/main/images/elf.png'>
 
 
 ## Installation
@@ -35,11 +35,11 @@ A complete list of supported parameters can be found [here](https://replicate.co
 
 > portrait of female elf, intricate, elegant, highly detailed, digital painting, artstation, concept art, smooth, sharp focus, illustration, art by artgerm and greg rutkowski and alphonse mucha, 8k.
 
-<img src='./images/elf2.png'>
+<img src='https://github.com/oelin/midjourney-client/blob/main/images/elf2.png'>
 
 > whimsical fantasy elegant rose floral botany maximalism with a wave of flowers garden flowing flowers floating in misty soft pink, aqua, soft apricot, smoke fractal, moody and big scale realistic flowers, octane render, by josephine wall art, isabelle menin, Jean, amy brown.
 
-<img src='./images/flowers.png'>
+<img src='https://github.com/oelin/midjourney-client/blob/main/images/flowers.png'>
 
 
 ## Future
