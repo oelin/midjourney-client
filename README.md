@@ -28,7 +28,7 @@ Pass in additional parameters as a second argument.
 await midjourney('a painting of a ginger cat.', { width: 1024 })
 ```
 
-A complete list of supported parameters can be found [here](https://replicate.com/prompthero/openjourney/api#inputs).
+A complete list of supported parameters can be found [here](https://replicate.com/prompthero/openjourney/api#inputs). Check this for constraints on parameter values.
 
 
 ## Examples
