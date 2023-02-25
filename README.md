@@ -19,13 +19,13 @@ npm i midjourney-client
 The API is super simple; just enter your prompt and `await` for one or more image URLs. One image is returned by default.
 
 ```js
-await midjourney('a painting of a ginger cat.')
+await midjourney('mdjrny-v4 style a painting of a ginger cat.')
 ```
 
 Pass in additional parameters as a second argument.
 
 ```js
-await midjourney('a painting of a ginger cat.', { width: 1024 })
+await midjourney('mdjrny-v4 style a painting of a ginger cat.', { width: 1024 })
 ```
 
 A complete list of supported parameters can be found [here](https://replicate.com/prompthero/openjourney/api#inputs). Check this for constraints on parameter values.
@@ -33,11 +33,11 @@ A complete list of supported parameters can be found [here](https://replicate.co
 
 ## Examples
 
-> portrait of female elf, intricate, elegant, highly detailed, digital painting, artstation, concept art, smooth, sharp focus, illustration, art by artgerm and greg rutkowski and alphonse mucha, 8k.
+> mdjrny-v4 style portrait of female elf, intricate, elegant, highly detailed, digital painting, artstation, concept art, smooth, sharp focus, illustration, art by artgerm and greg rutkowski and alphonse mucha, 8k.
 
 <img src='https://github.com/oelin/midjourney-client/blob/main/images/elf2.png'>
 
-> whimsical fantasy elegant rose floral botany maximalism with a wave of flowers garden flowing flowers floating in misty soft pink, aqua, soft apricot, smoke fractal, moody and big scale realistic flowers, octane render, by josephine wall art, isabelle menin, Jean, amy brown.
+> mdjrny-v4 style whimsical fantasy elegant rose floral botany maximalism with a wave of flowers garden flowing flowers floating in misty soft pink, aqua, soft apricot, smoke fractal, moody and big scale realistic flowers, octane render, by josephine wall art, isabelle menin, Jean, amy brown.
 
 <img src='https://github.com/oelin/midjourney-client/blob/main/images/flowers.png'>
 
