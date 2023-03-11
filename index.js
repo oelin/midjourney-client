@@ -13,11 +13,11 @@ export default async function midjourney(prompt, inputs = {}) {
 
         // Grab a CSRF token...
 
-        await fetch(sessionCookieJar, `https://replicate.com/${constants.MODEL_NAME}`)
+        await fetch(sessionCookieJar, constants.COOKIE_FETCH_URL)
 
         // Call the model API...
 
-        const response1 = await fetch(sessionCookieJar, `https://replicate.com/api/models/${constants.MODEL_NAME}/versions/${constants.MODEL_VERSION}/predictions`, {
+        const response1 = await fetch(sessionCookieJar, constants.PREDICTIONS_URL, {
                 headers: {
                         'content-type': 'application/json',
                         'accept': 'application/json',
@@ -46,7 +46,7 @@ export default async function midjourney(prompt, inputs = {}) {
 
         for (let timeoutCounter = 0; timeoutCounter < constants.TIMEOUT; timeoutCounter ++) {
                 
-                let response2 = await fetch(sessionCookieJar, `https://replicate.com/api/models/${constants.MODEL_NAME}/versions/${constants.MODEL_VERSION}/predictions/${uuid}`, {
+                let response2 = await fetch(sessionCookieJar, `${constants.PREDICTIONS_URL}/${uuid}`, {
                         headers: {
                                 'accept': '*/*',
                         },
