@@ -2,7 +2,7 @@
 
 ## UPDATE
 
-This project has now been superseded by [`node-replicate`](https://github.com/oelin/node-replicate), which lets you to access *any* on model on Replicate, rather than just a specific version of Openjourney. We recommend switching to `node-replicate` as `midjourney-client` is no longer in active development.
+This project has now been superseded by [`node-replicate`](https://github.com/oelin/node-replicate), which lets you to access *any* model on Replicate, rather than just a specific version of Openjourney. We recommend switching to `node-replicate` as `midjourney-client` is no longer in active development.
 
 ---
 
