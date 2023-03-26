@@ -1,10 +1,6 @@
 # Midjourney Client
 
-## Notice
-
-This project has now been superseded by [`node-replicate`](https://github.com/oelin/node-replicate), which lets you access *any* model on Replicate, rather than just a specific version of Openjourney. We recommend switching to `node-replicate` as `midjourney-client` is no longer in active development.
-
----
+A Node.js client for Midjourney/Openjourney on Replicate. Powered by [`node-replicate`](https://npmjs.com/node-replicate).
 
 > Openjourney is an open source Stable Diffusion fine tuned model on Midjourney images, by [PromptHero](https://prompthero.com/). Predictions run on Nvidia A100 GPU hardware.
 
@@ -18,25 +14,23 @@ npm i midjourney-client
 ```
 
 
-## API
+## Usage
 
-The API is super simple; just enter your prompt and wait for one or more image URLs to be returned. One image is returned by default.
+Just enter your prompt and wait for one or more image URLs to be returned. One image is returned by default.
 
 ```js
-import midjourney from 'midjourney-client'
+import midjourney from "midjourney-client"
 ```
 
 ```js
-await midjourney('mdjrny-v4 style a painting of a ginger cat.')
+await midjourney("mdjrny-v4 style a painting of a ginger cat.")
 ```
 
-Pass in additional parameters as a second argument.
+You can also specify additional parameters as a second argument. A list of supported parameters can be foud [here](https://replicate.com/prompthero/openjourney/api#inputs).
 
 ```js
 await midjourney('mdjrny-v4 style a painting of a ginger cat.', { width: 1024 })
 ```
-
-A complete list of supported parameters can be found [here](https://replicate.com/prompthero/openjourney/api#inputs). Check this for constraints on parameter values.
 
 
 ## Examples
