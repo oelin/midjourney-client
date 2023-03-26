@@ -1,7 +1,7 @@
 {
   "name": "midjourney-client",
-  "version": "1.0.8",
-  "description": "A minimal client for Midjourney/Openjourney on Replicate.",
+  "version": "1.0.9",
+  "description": "A Node.js client for Midjourney/Openjourney on Replicate.",
   "main": "index.js",
   "type": "module",
   "files": [
