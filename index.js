@@ -4,4 +4,3 @@ const model = 'prompthero/openjourney:9936c2001faa2194a261c01381f90e652618799854
 
 export default async (prompt, parameters) => 
 	await replicate.run(model, { prompt, ...parameters })
-		.then(output => output)
