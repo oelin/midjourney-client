@@ -1,66 +1,9 @@
-import {fetch, CookieJar} from 'node-fetch-cookies'
-import * as constants from './constants.js'
+import replicate from 'node-replicate'
 
+const model = replicate.model(
+	'prompthero/openjourney:9936c2001faa2194a261c01381f90e65261879985476014a0a37a334593a05eb'
+)
 
-function sleep(milliseconds) {
-        return new Promise(resolve => setTimeout(resolve, milliseconds))
-}
-
-
-export default async function midjourney(prompt, inputs = {}) {
-
-        const sessionCookieJar = new CookieJar()
-
-        // Grab a CSRF token...
-
-        await fetch(sessionCookieJar, constants.COOKIE_FETCH_URL)
-
-        // Call the model API...
-
-        const response1 = await fetch(sessionCookieJar, constants.PREDICTIONS_URL, {
-                headers: {
-                        'content-type': 'application/json',
-                        'accept': 'application/json',
-                        'x-csrftoken': sessionCookieJar.cookies.get('csrftoken'),
-                },
-                method: 'POST',
-                mode: 'cors',
-                credentials: 'include',
-                body: JSON.stringify({
-                        inputs: {
-                                guidance_scale: '7',
-                                width: 512,
-                                height: 512,
-                                num_inference_steps: 50,
-                                num_outputs: 1,
-                                seed: null,
-                                prompt,
-                                ...inputs,
-                        },
-                }),
-        })
-
-        // Wait for the image to be generated...
-
-        const uuid = (await response1.json()).uuid
-
-        for (let timeoutCounter = 0; timeoutCounter < constants.TIMEOUT; timeoutCounter ++) {
-                
-                let response2 = await fetch(sessionCookieJar, `${constants.PREDICTIONS_URL}/${uuid}`, {
-                        headers: {
-                                'accept': '*/*',
-                        },
-                        method: 'GET',
-                        mode: 'cors',
-                        credentials: 'include',
-                        body: null,
-                })
-
-                let output = (await response2.json())?.prediction?.output
-                if (output && output.length) { return output }
-                
-                await sleep(1000)
-        }
-
-        return []
-}
+export default async (prompt, parameters, onUpdate) => 
+	await model.predict({ prompt, ...parameters }, { onUpdate })
+		.then(prediction => prediction.output)

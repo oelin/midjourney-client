@@ -1,16 +1,13 @@
 {
   "name": "midjourney-client",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A minimal client for Midjoruney/Openjourney on Replicate.",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "oelin",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "node-fetch-cookies": "^2.0.4"
+    "node-replicate": "^1.1.6"
   },
   "repository": {
     "type": "git",
