@@ -20,7 +20,7 @@ npm i midjourney-client
 
 ## API
 
-The API is super simple; just enter your prompt and `await` for one or more image URLs. One image is returned by default.
+The API is super simple; just enter your prompt and wait for one or more image URLs to be returned. One image is returned by default.
 
 ```js
 import midjourney from 'midjourney-client'
