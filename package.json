@@ -4,6 +4,10 @@
   "description": "A minimal client for Midjoruney/Openjourney on Replicate.",
   "main": "index.js",
   "type": "module",
+  "files": [
+    "index.js",
+    "README.md"
+  ],
   "author": "oelin",
   "license": "MIT",
   "dependencies": {
