@@ -26,7 +26,7 @@ import midjourney from "midjourney-client"
 await midjourney("mdjrny-v4 style a painting of a ginger cat.")
 ```
 
-Sspecify additional parameters as a second argument. A list of supported parameters can be found [here](https://replicate.com/prompthero/openjourney/api#inputs).
+Specify additional parameters as a second argument. A list of supported parameters can be found [here](https://replicate.com/prompthero/openjourney/api#inputs).
 
 ```js
 await midjourney('mdjrny-v4 style a painting of a ginger cat.', { width: 1024 })
