@@ -2,6 +2,10 @@
 
 ## NOTICE
 
+Due to changes to Replicates API, it is no longer possible to run models anonymously. As such, this project, along with [`node-replicate`](https://github.com/Oelin/node-replicate) have been depreciated. We recommend switching to Replicate's official API.
+
+---
+
 Replicate.com now requires GitHub authentication to run model demos. As such, this project, along with `node-replicate` are now depreciated. We recommend switching to Replicate's official API.
 
 
