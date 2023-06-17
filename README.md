@@ -1,5 +1,10 @@
 # Midjourney Client
 
+## NOTICE
+
+Replicate.com now requires GitHub authentication to run model demos. As such, this project, along with `node-replicate` are now depreciated. We recommend switching to Replicate's official API.
+
+
 A Node.js client for Midjourney/Openjourney on Replicate. Powered by [`node-replicate`](https://npmjs.com/node-replicate).
 
 > Openjourney is an open source Stable Diffusion fine tuned model on Midjourney images, by [PromptHero](https://prompthero.com/). Predictions run on Nvidia A100 GPU hardware.
