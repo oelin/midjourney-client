@@ -1,6 +1,6 @@
 import replicate from 'node-replicate'
 
-const model = 'prompthero/openjourney:9936c2001faa2194a261c01381f90e65261879985476014a0a37a334593a05eb'
+const model = 'stability-ai/stable-diffusion:ac732df83cea7fff18b8472768c88ad041fa750ff7682a21affe81863cbe77e4'
 
 export default async (prompt, parameters) => 
 	await replicate.run(model, { prompt, ...parameters })
