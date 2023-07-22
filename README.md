@@ -2,7 +2,7 @@
 
 ## NOTICE
 
-Due to changes to Replicate's API, it is no longer possible to run models anonymously. As such, this project, along with [`node-replicate`](https://github.com/Oelin/node-replicate) have been depreciated. We recommend switching to Replicate's official API.
+Replicate re-enable anonymous model running. So the project is back!
 
 ---
 
