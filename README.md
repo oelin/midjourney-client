@@ -1,5 +1,7 @@
 # Midjourney Client
 
+A Node.js client for Midjourney/Openjourney on Replicate. Powered by [`node-replicate`](https://npmjs.com/node-replicate).
+
 > Openjourney is an open source Stable Diffusion fine tuned model on Midjourney images, by [PromptHero](https://prompthero.com/). Predictions run on Nvidia A100 GPU hardware.
 
 <img src='https://github.com/oelin/midjourney-client/blob/main/images/elf.png'>
